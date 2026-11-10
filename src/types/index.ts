@@ -54,7 +54,7 @@ export interface ItemOfferStrategy {
     /** Returns true if this offer applies to the given SKU. */
     appliesTo(sku: SKU): boolean;
     /** Returns the discount for the item, or null if no discount is earned. */
-    calculateDiscount(item: BasketItem, product: Product): ReceiptDiscount | null;
+    calculateDiscount(sku: SKU, quantity: number, unitPriceInCents: number): ReceiptDiscount | null;
 }
 
 /**
@@ -72,6 +72,9 @@ export interface CheckoutRequest {
     items: BasketItem[];
     discountCode?: string | null;
 }
+
+/** Alias for CheckoutRequest used by CheckoutService. */
+export type CheckoutPayload = CheckoutRequest;
 
 /** POST /checkout response body. */
 export interface CheckoutResponse {
