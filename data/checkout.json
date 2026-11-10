@@ -1,0 +1,17 @@
+{
+    "items": [
+        {
+            "sku": "NB",
+            "quantity": 3
+        },
+        {
+            "sku": "PEN",
+            "quantity": 5
+        },
+        {
+            "sku": "MUG",
+            "quantity": 1
+        }
+    ],
+    "discountCode": "SAVE10"
+}
